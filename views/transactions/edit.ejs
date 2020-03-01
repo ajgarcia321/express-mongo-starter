@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>New Captain's Log</title>
+        <link rel="stylesheet" href="./public/css/main.css">
+    </head>
+    <body>
+        <form action="/logs/<%=log.id%>?_method=PUT" method="POST">
+        Title: <input type="text" name="title" value="<%=log.title%>"/>
+        <br/>
+        Entry: <input type="text" name="entry" value="<%=log.entry%>"/>
+        <br/>
+        Is the ship functioning?
+        <input type="checkbox" name="shipIsBroken" value="<%=log.shipIsBroken%>"/>
+        <br/>
+        <input type="submit" name="" value="Update Log" id="submit"/>
+        </form>
+    </body>
+</html>

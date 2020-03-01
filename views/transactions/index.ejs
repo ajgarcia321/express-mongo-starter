@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Captain's Logs</title>
+    <!-- <link rel="stylesheet" type="text/css" href="...../public/css/main.css"> -->
+    <%- include "/public/css/main.css" %>
+</head>
+<body>
+    <h1>Captain's Logs</h1>
+    <nav>
+        <ul>
+            <li><a href="/logs">View Logs</a></li>
+            <li><a href="/logs/new">New Entry</a></li>
+            <% if (currentUser) { %>
+                <li>Welcome <%= currentUser.username %></li>
+                <li>
+                    <form action="/sessions?_method=DELETE" method="POST">
+                        <input type="submit" value="Log Out" class="btn-small red" />
+                    </form>
+                </li>
+                <% } else { %>
+                    <li><a href="/users/new">Sign Up</a></li>
+                    <li><a href="/sessions/new">Log In</a></li>
+                    <% } %>
+        </ul>
+    </nav>
+
+            <ul>
+                <% for(let i = 0; i < logs.length; i++){ %>
+                    <li>
+                        <h3><a href="/logs/<%=logs[i].id;%>"><%=logs[i].title; %></a></h3>
+                        <form action="/logs/<%=logs[i].id%>?_method=DELETE" method="POST">
+                            <input type="submit" value="🗑️"/>
+                            <a id="edit" href="/logs/<%=logs[i].id%>/edit">✍️</a>
+                        </form>
+                    </li>
+                    <% } %>
+                </ul>
+            </body>
+            </html>
