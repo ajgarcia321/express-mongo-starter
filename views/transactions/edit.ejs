@@ -2,19 +2,20 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>New Captain's Log</title>
+        <title>Edit Transaction</title>
         <link rel="stylesheet" href="./public/css/main.css">
     </head>
     <body>
-        <form action="/logs/<%=log.id%>?_method=PUT" method="POST">
-        Title: <input type="text" name="title" value="<%=log.title%>"/>
+        <form action="/transactions/<%=transaction.id%>?_method=PUT" method="POST">
+        Title: <input type="text" name="title" value="<%=transaction.title%>"/>
         <br/>
-        Entry: <input type="text" name="entry" value="<%=log.entry%>"/>
+        Description: <input type="text" name="description" value="<%=transaction.description%>"/>
         <br/>
-        Is the ship functioning?
-        <input type="checkbox" name="shipIsBroken" value="<%=log.shipIsBroken%>"/>
+        Amount: <input type="number" name="amount" value="<%=transaction.amount%>"/>
         <br/>
-        <input type="submit" name="" value="Update Log" id="submit"/>
+        Tags: <input type="text" name="tags" value="<%=transaction.tags%>"/>
+        <br/>
+        <input type="submit" name="" value="Update Transaction" id="submit"/>
         </form>
     </body>
 </html>

@@ -2,16 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Captain's Logs</title>
-    <!-- <link rel="stylesheet" type="text/css" href="...../public/css/main.css"> -->
-    <%- include "/public/css/main.css" %>
+    <title>Transactions</title>
 </head>
 <body>
-    <h1>Captain's Logs</h1>
+    <h1>Total: </h1>
     <nav>
         <ul>
-            <li><a href="/logs">View Logs</a></li>
-            <li><a href="/logs/new">New Entry</a></li>
+            <li><a href="/transactions">View Transactions</a></li>
+            <li><a href="/transactions/new">New Transaction</a></li>
             <% if (currentUser) { %>
                 <li>Welcome <%= currentUser.username %></li>
                 <li>
@@ -25,14 +23,13 @@
                     <% } %>
         </ul>
     </nav>
-
             <ul>
-                <% for(let i = 0; i < logs.length; i++){ %>
+                <% for(let i = 0; i < transactions.length; i++) { %>
                     <li>
-                        <h3><a href="/logs/<%=logs[i].id;%>"><%=logs[i].title; %></a></h3>
-                        <form action="/logs/<%=logs[i].id%>?_method=DELETE" method="POST">
+                        <h3><a href="/transactions/<%=transactions[i].id;%>"><%=transactions[i].title; %></a></h3>
+                        <form action="/transactions/<%=transactions[i].id%>?_method=DELETE" method="POST">
                             <input type="submit" value="🗑️"/>
-                            <a id="edit" href="/logs/<%=logs[i].id%>/edit">✍️</a>
+                            <a id="edit" href="/transactions/<%=transactions[i].id%>/edit">✍️</a>
                         </form>
                     </li>
                     <% } %>

@@ -16,7 +16,7 @@ users.post('/', (req, res) => {
       console.log(err)
     } else {
       console.log('user is created', createdUser)
-      res.redirect('/logs')
+      res.redirect('/transactions')
     }
   })
 })

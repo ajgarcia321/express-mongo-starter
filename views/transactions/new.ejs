@@ -2,16 +2,20 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>New Captain's Log</title>
+        <title>New Transaction</title>
         <link rel="stylesheet" type="text/css" href="../styling/main.css">
     </head>
     <body>
-        <h1>New Captain's Log</h1>
-        <form action="/logs" method="POST">
-        Title: <input type="text" name="title" /><br/>
-        Entry: <input type="text" name="entry" /><br/>
-        Is the ship functioning? <input type="checkbox" name="shipIsBroken" /><br/>
-        <input type="submit" name="" value="Create Log" id="submit"/>
+        <h1>New Transaction</h1>
+        <form action="/transactions" method="POST">
+        Title: <input type="text" name="title" />
+        <br/>
+        Description: <input type="text" name="description" />
+        <br/>
+        Amount: <input type="number" name="amount" /><br/>
+        Tags: <input type="text" name="tags" placeholder="ex) 'food,shopping,etc.'"/>
+        <br/>
+        <input type="submit" name="" value="Create Transaction" id="submit"/>
         </form>
     </body>
 </html>

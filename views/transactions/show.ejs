@@ -2,34 +2,34 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title><%=log.title%></title>
+        <title><%=transaction.title%></title>
         <link rel="stylesheet" type="text/css" href="./styling/main.css">
     </head>
     <body>
         <nav>
               <%- include ('../partials/nav.ejs') %>
         </nav>
-        <h1>Log: <%=log.title%></h1>
+        <h1>Transaction: <%=transaction.title%></h1>
+        <h2>Description: <%=transaction.description%></h2>
         <h3>Ship Status: <h3>
-            <%  if(log.shipIsBroken === true){ %>
-            <h4>Broken</h4>
-            <style>
-                h4 {
-                    color: red;
-                }
-            </style>
-        <% } else { %>
-            <h4>Functioning</h4>
+            <%  if(transaction.amount >= 0){ %>
+            <h4><%=transaction.amount%></h4>
             <style>
                 h4 {
                     color: green;
                 }
             </style>
+        <% } else { %>
+            <h4><%=transaction.amount%></h4>
+            <style>
+                h4 {
+                    color: red;
+                }
+            </style>
         <%} %>
-        <h3>Entry: </h3>
-        <p><%=log.entry%></p>
+        <h4>Tags: <%=transaction.tags%></h4>
         <nav>
-            <a href="/logs">Back to Captain's Logs</a>
+            <a href="/transactions">Back to Captain's Transactions</a>
         </nav>
     </body>
 </html>
