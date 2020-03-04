@@ -70,21 +70,24 @@ transactions.post('/', (req, res) => {
 // INDEX
 transactions.get('/', (req, res) => {
     Transactions.find({}, (error, allTransactions) => {
+        // const arr = [{ name: 'alfonso', num: 3}, { name: 'alfonso', num: 3}, { name: 'alfonso', num: 3}, { name: 'alfonso99', num: 5}]
+        // const filtered = Transactions.filter((item)=> { return transactions.name === 'alfonso'})
+        // const runningBalance = filtered.reduce((accumulator, item)=> {return accumulator + item.num }, 0)
         res.render('transactions/index.ejs', {
             transactions: allTransactions,
-            currentUser: req.session.currentUser
+            currentUser: req.session.currentUser,
+            // transactions: filtered
         })
     })
 })
-/*
-const arr = [{ name: 'alfonso', num: 3}, { name: 'alfonso', num: 3}, { name: 'alfonso', num: 3}, { name: 'alfonso99', num: 5}]
-const filtered = arr.filter((item)=> { return item.name === 'alfonso'})
-const runningBalance = filtered.reduce((accumulator, item)=> {return accumulator + item.num }, 0)
-res.render('index.ejs', {
-	transactions: filtered,
-	balance: run
-})
-*/
+// const arr = [{ name: 'alfonso', num: 3}, { name: 'alfonso', num: 3}, { name: 'alfonso', num: 3}, { name: 'alfonso99', num: 5}]
+// const filtered = arr.filter((item)=> { return transactions.name === 'alfonso'})
+// const runningBalance = filtered.reduce((accumulator, item)=> {return accumulator + item.num }, 0)
+// res.render('index.ejs', {
+// 	transactions: filtered,
+// 	balance: run
+// })
+
 // Drop DB Route
 transactions.get(
     '/dropdatabase/cannotundo/areyoursure/reallysure/okthen',

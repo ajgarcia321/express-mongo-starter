@@ -10,26 +10,37 @@
         <div class="main">
         <h1>Transaction: <%=transaction.title%></h1>
         <h2>Description: <%=transaction.description%></h2>
-        <h3>Amount: <h3>
+    </br>
+        <h2>Amount: <h2>
             <%  if(transaction.amount >= 0){ %>
-            <h4>$<%=transaction.amount%></h4>
+            <h3 id="amount">$<%=transaction.amount%></h3>
             <style>
-                h4 {
+                #amount {
                     color: green;
                 }
             </style>
         <% } else { %>
-            <h4>$<%=transaction.amount%></h4>
+            <h3 id="amount">$<%=transaction.amount%></h3>
             <style>
-                h4 {
+                #amount {
                     color: red;
                 }
             </style>
         <%} %>
-        <h5>Tags: <%=transaction.tags%></h4>
+        <h4> Date: </h4>
+        <h4><%=transaction.date%> </h4>
+        <h5>Tags: <%=transaction.tags%></h5>
         <nav>
             <a href="/transactions">Back to your Transactions</a>
         </nav>
     </div>
     </body>
+    <style>
+    nav >a {
+        color: #F5C705;
+    }
+    h1 {
+        margin: 0
+    }
+    </style>
 </html>

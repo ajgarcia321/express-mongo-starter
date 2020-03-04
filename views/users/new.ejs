@@ -7,7 +7,12 @@
   </head>
   <body>
     <div class="main">
-      <h1>Create an Account</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Sign In</a></li>
+                <li id="signup"><a href="users/new">Sign Up</a></li>
+            </ul>
+        </nav>
       <form action="/users" method="POST">
         <label for="name">Username:</label>
         <input type="text" name="username" required/>
@@ -15,9 +20,13 @@
         <label for="password">Password:</label>
         <input type="password" name="password" />
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Create Account" class="select">
     </form>
-          <p>Already a member? <a href="/">Click here to log in!</a></p>
     </div>
   </body>
+  <style>
+  #signup {
+      text-decoration: underline;
+  }
+  </style>
 </html>

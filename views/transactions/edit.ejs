@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title>Edit Transaction</title>
-        <link rel="stylesheet" href="/main/main.css">
+        <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
         <%- include ('../partials/nav.ejs') %>
         <div class="main">
+
+        <h1>Editing: <%=transaction.title%> </h1>
         <form action="/transactions/<%=transaction.id%>?_method=PUT" method="POST">
         Title: <input type="text" name="title" value="<%=transaction.title%>"/>
         <br/>

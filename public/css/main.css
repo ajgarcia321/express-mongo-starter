@@ -1,7 +1,10 @@
+html {
+    background-color: #D91A1F
+}
 nav {
     border-bottom: 3px solid black;
     background-color: #D91A1F;
-    color: #F5C705
+    color: #F5C705;
 }
 
 .nav {
@@ -20,11 +23,12 @@ nav >h3 {
 #new {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 1% 2%;
+    padding: .5% 1%;
 }
 
 li {
     list-style: none;
+    display: block;
 }
 
 li >h3 {
@@ -38,6 +42,12 @@ li >h3 {
 
 .main {
     text-align: center;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.main >h2 {
+    margin-top: 1%;
 }
 
 a {
@@ -49,8 +59,19 @@ a:hover {
     text-decoration: underline;
 }
 
+
 .logout {
     background-color: #D91A1F;
     color: #F5C705;
     border: 1px solid #D91A1F;
+    margin-left: 55%;
+}
+
+.logout:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+h2 {
+    margin-top: 3%
 }
