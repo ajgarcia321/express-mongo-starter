@@ -22,7 +22,9 @@ require('dotenv').config()
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/transactions';
 
 // Connect to Mongo
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useUnifiedTopology: true,
+mongoose.connect(MONGODB_URI ,  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true
  });
@@ -60,7 +62,7 @@ app.use('/users', userController)
 //___________________
 app.get('/' , (req, res) => {
   // res.send('Hello World!');
-    res.redirect('/transactions')
+    res.render('sessions/new.ejs')
 });
 
 //___________________

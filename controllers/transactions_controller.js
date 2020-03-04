@@ -68,7 +68,7 @@ transactions.post('/', (req, res) => {
 })
 
 // INDEX
-transactions.get('/index', (req, res) => {
+transactions.get('/', (req, res) => {
     Transactions.find({}, (error, allTransactions) => {
         res.render('transactions/index.ejs', {
             transactions: allTransactions,
@@ -76,17 +76,15 @@ transactions.get('/index', (req, res) => {
         })
     })
 })
-
-// INITIAL
-transactions.get('/', (req, res) => {
-    Transactions.find({}, (error, allTransactions) => {
-        res.render('transactions/initial.ejs', {
-            transactions: allTransactions,
-            currentUser: req.session.currentUser
-        })
-    })
+/*
+const arr = [{ name: 'alfonso', num: 3}, { name: 'alfonso', num: 3}, { name: 'alfonso', num: 3}, { name: 'alfonso99', num: 5}]
+const filtered = arr.filter((item)=> { return item.name === 'alfonso'})
+const runningBalance = filtered.reduce((accumulator, item)=> {return accumulator + item.num }, 0)
+res.render('index.ejs', {
+	transactions: filtered,
+	balance: run
 })
-
+*/
 // Drop DB Route
 transactions.get(
     '/dropdatabase/cannotundo/areyoursure/reallysure/okthen',

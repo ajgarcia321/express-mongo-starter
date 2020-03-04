@@ -3,18 +3,21 @@
   <head>
       <meta charset="utf-8">
       <title>New User</title>
+      <link rel="stylesheet" href="/css/logins.css">
   </head>
   <body>
-    <div class="container">
-      <h1>New User</h1>
+    <div class="main">
+      <h1>Create an Account</h1>
       <form action="/users" method="POST">
         <label for="name">Username:</label>
         <input type="text" name="username" required/>
+    </br>
         <label for="password">Password:</label>
         <input type="password" name="password" />
         <br>
         <input type="submit" value="Submit">
-      <form>
+    </form>
+          <p>Already a member? <a href="/">Click here to log in!</a></p>
     </div>
   </body>
 </html>

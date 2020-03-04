@@ -3,36 +3,47 @@
 <head>
     <meta charset="utf-8">
     <title>Transactions</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <h1>Total: </h1>
-    <nav>
-        <ul>
-            <li><a href="/transactions">View Transactions</a></li>
-            <li><a href="/transactions/new">New Transaction</a></li>
-            <% if (currentUser) { %>
-                <li>Welcome <%= currentUser.username %></li>
-                <li>
-                    <form action="/sessions?_method=DELETE" method="POST">
-                        <input type="submit" value="Log Out" class="btn-small red" />
-                    </form>
-                </li>
-                <% } else { %>
-                    <li><a href="/users/new">Sign Up</a></li>
-                    <li><a href="/sessions/new">Log In</a></li>
+    <%- include ('../partials/nav.ejs') %>
+    <div class="main">
+        <h2>Total:<h2><h2 id="amount">$</h2>
+        <h2 id="amount">
+            <% let total = [0] %>
+            <% let func = (total, num) => { %>
+                <% return total + num %>
+                <% } %>
+                <% for (let i = 0; i < transactions.length; i++){ %>
+                    <% total.push(parseInt(transactions[i].amount)) %>
                     <% } %>
-        </ul>
-    </nav>
-            <ul>
-                <% for(let i = 0; i < transactions.length; i++) { %>
-                    <li>
-                        <h3><a href="/transactions/<%=transactions[i].id;%>"><%=transactions[i].title; %></a></h3>
-                        <form action="/transactions/<%=transactions[i].id%>?_method=DELETE" method="POST">
-                            <input type="submit" value="🗑️"/>
-                            <a id="edit" href="/transactions/<%=transactions[i].id%>/edit">✍️</a>
-                        </form>
-                    </li>
-                    <% } %>
-                </ul>
-            </body>
-            </html>
+                    <%= total.reduce(func) %>
+                    <% if (total.reduce(func) > 0){ %>
+                        <style>
+                        #amount{
+                            color: green;
+                        }
+                        </style>
+                        <% } else if (total.reduce(func) < 0){ %>
+                            <style>
+                            #amount {
+                                color: red;
+                            }
+                            </style>
+                            <% } %>
+                        </h2>
+                        <ul>
+                            <li><a id="new" href="/transactions/new">New Transaction</a></li>
+                            <% for(let i = 0; i < transactions.length; i++) { %>
+                                <li>
+                                    <h3><a href="/transactions/<%=transactions[i].id;%>"><%=transactions[i].title%></a></h3>
+                                    <form action="/transactions/<%=transactions[i].id%>?_method=DELETE" method="POST">
+                                        <input type="submit" value="🗑️"/>
+                                        <a id="edit" href="/transactions/<%=transactions[i].id%>/edit">✍️</a>
+                                    </form>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </body>
+                    </html>

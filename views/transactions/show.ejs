@@ -3,33 +3,33 @@
     <head>
         <meta charset="utf-8">
         <title><%=transaction.title%></title>
-        <link rel="stylesheet" type="text/css" href="./styling/main.css">
+        <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
-        <nav>
-              <%- include ('../partials/nav.ejs') %>
-        </nav>
+        <%- include ('../partials/nav.ejs') %>
+        <div class="main">
         <h1>Transaction: <%=transaction.title%></h1>
         <h2>Description: <%=transaction.description%></h2>
-        <h3>Ship Status: <h3>
+        <h3>Amount: <h3>
             <%  if(transaction.amount >= 0){ %>
-            <h4><%=transaction.amount%></h4>
+            <h4>$<%=transaction.amount%></h4>
             <style>
                 h4 {
                     color: green;
                 }
             </style>
         <% } else { %>
-            <h4><%=transaction.amount%></h4>
+            <h4>$<%=transaction.amount%></h4>
             <style>
                 h4 {
                     color: red;
                 }
             </style>
         <%} %>
-        <h4>Tags: <%=transaction.tags%></h4>
+        <h5>Tags: <%=transaction.tags%></h4>
         <nav>
-            <a href="/transactions">Back to Captain's Transactions</a>
+            <a href="/transactions">Back to your Transactions</a>
         </nav>
+    </div>
     </body>
 </html>

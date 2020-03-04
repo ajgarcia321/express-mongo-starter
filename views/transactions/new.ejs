@@ -3,9 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>New Transaction</title>
-        <link rel="stylesheet" type="text/css" href="../styling/main.css">
+        <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
+        <%- include ('../partials/nav.ejs') %>
+        <div class="main">
         <h1>New Transaction</h1>
         <form action="/transactions" method="POST">
         Title: <input type="text" name="title" />
@@ -17,5 +19,6 @@
         <br/>
         <input type="submit" name="" value="Create Transaction" id="submit"/>
         </form>
+    </div>
     </body>
 </html>

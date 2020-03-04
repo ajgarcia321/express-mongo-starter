@@ -1,0 +1,16 @@
+<nav>
+<h3>Financial Manager</h3>
+    <ul class="nav">
+        <% if (currentUser) { %>
+            <li id="welcome">Welcome <b><%= currentUser.username %></b></li>
+            <li id="user">
+                <form action="/sessions?_method=DELETE" method="POST">
+                    <input type="submit" value="Log Out" class="logout" />
+                </form>
+            </li>
+            <% } else { %>
+                <li><a href="/users/new">Sign Up</a></li>
+                <li><a href="/sessions/new">Log In</a></li>
+                <% } %>
+            </ul>
+        </nav>

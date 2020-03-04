@@ -20,7 +20,7 @@ sessions.post('/', (req,res) => {
             if (bcrypt.compareSync(req.body.password, foundUser.password)){
                 req.session.currentUser = foundUser
                 console.log("Successful Login");
-                res.redirect('/')
+                res.redirect('/transactions')
             } else {
                 res.send('<a href="/">Password does not match</a>')
             }

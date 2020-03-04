@@ -16,7 +16,8 @@ users.post('/', (req, res) => {
       console.log(err)
     } else {
       console.log('user is created', createdUser)
-      res.redirect('/transactions')
+      // alert('Your account has been created. Please log in.')
+      res.render('sessions/new.ejs')
     }
   })
 })

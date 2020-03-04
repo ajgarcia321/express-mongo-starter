@@ -3,18 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Log In</title>
+    <link rel="stylesheet" href="/css/logins.css">
   </head>
   <body>
-    <div class="container">
+    <div class="main">
       <h1>Log In</h1>
       <form action="/sessions" method="POST">
         <label for="name">Username:</label>
         <input type="text" name="username" required/>
+    </br>
         <label for="color">Password:</label>
         <input type="password" name="password" />
         <br>
         <input type="submit" value="Submit">
-      <form>
+    </form>
+        <p>Not yet a member? <a href="users/new">Click here to sign up!</a></p>
     </div>
   </body>
 </html>
