@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <title>Transactions</title>
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 </head>
 <body>
     <%- include ('../partials/nav.ejs') %>
     <div class="main">
-        <h2>Total:<h2><h2 id="amount">$</h2>
-        <h2 id="amount">
+        <h2>Total:<h2><h2 id="total">$</h2>
+        <h2 id="total">
             <% let total = [0] %>
             <% let func = (total, num) => { %>
                 <% return total + num %>
@@ -20,13 +21,13 @@
                     <%= total.reduce(func) %>
                     <% if (total.reduce(func) > 0){ %>
                         <style>
-                        #amount{
+                        #total{
                             color: green;
                         }
                         </style>
                         <% } else if (total.reduce(func) < 0){ %>
                             <style>
-                            #amount {
+                            #total {
                                 color: red;
                             }
                             </style>
@@ -36,9 +37,9 @@
                             <li><a id="new" href="/transactions/new">New Transaction</a></li>
                             <% for(let i = 0; i < transactions.length; i++) { %>
                                 <li>
-                                    <h3><a href="/transactions/<%=transactions[i].id;%>"><%=transactions[i].title%></a></h3>
+                                    <h3><a href="/transactions/<%=transactions[i].id;%>"><%=transactions[i].title%>: $<%=transactions[i].amount%></a></h3>
                                     <form action="/transactions/<%=transactions[i].id%>?_method=DELETE" method="POST">
-                                        <input type="submit" value="🗑️"/>
+                                        <input type="submit" value="🗑️" id="delete"/>
                                         <a id="edit" href="/transactions/<%=transactions[i].id%>/edit">✍️</a>
                                     </form>
                                 </li>
@@ -46,4 +47,12 @@
                             </ul>
                         </div>
                     </body>
+                    <style>
+                    h3 {
+                        display: inline-block;
+                    }
+                    #delete:hover{
+                        cursor: pointer;
+                    }
+                    </style>
                     </html>

@@ -4,21 +4,25 @@
         <meta charset="utf-8">
         <title>New Transaction</title>
         <link rel="stylesheet" href="/css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     </head>
     <body>
         <%- include ('../partials/nav.ejs') %>
         <div class="main">
         <h1>New Transaction</h1>
         <form action="/transactions" method="POST">
+        <h4>
         Title: <input type="text" name="title" />
-        <br/>
-        Date: <input type="Date" name="date" />
         <br/>
         Description: <input type="text" name="description" />
         <br/>
-        Amount: <input type="number" name="amount" /><br/>
+        Amount: <input type="number" name="amount" />
+        <br/>
+        Date: <input type="Date" name="date" />
+        <br/>
         Tags: <input type="text" name="tags" placeholder="ex) 'food,shopping,etc.'"/>
         <br/>
+    </h4>
         <input type="submit" name="" value="Create Transaction" id="submit"/>
         </form>
     </div>

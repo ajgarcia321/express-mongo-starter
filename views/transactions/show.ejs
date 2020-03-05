@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <title><%=transaction.title%></title>
         <link rel="stylesheet" href="/css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     </head>
     <body>
         <%- include ('../partials/nav.ejs') %>
         <div class="main">
-        <h1>Transaction: <%=transaction.title%></h1>
+        <h1>Title: <%=transaction.title%></h1>
         <h2>Description: <%=transaction.description%></h2>
     </br>
         <h2>Amount: <h2>
@@ -30,14 +31,14 @@
         <h4> Date: </h4>
         <h4><%=transaction.date%> </h4>
         <h5>Tags: <%=transaction.tags%></h5>
-        <nav>
-            <a href="/transactions">Back to your Transactions</a>
-        </nav>
+        <h6><a href="/transactions">Back to your Transactions</a></h6>
     </div>
     </body>
     <style>
-    nav >a {
-        color: #F5C705;
+    a {
+        border: 1px solid black;
+        border-radius: 3px;
+        padding: .5% 1%;
     }
     h1 {
         margin: 0

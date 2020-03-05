@@ -1,6 +1,7 @@
 html {
     background-color: #D91A1F
 }
+
 nav {
     border-bottom: 3px solid black;
     background-color: #D91A1F;
@@ -17,13 +18,16 @@ nav >h3 {
     display: inline;
     top: 0px;
     left: 0px;
-    margin-right: 65%;
+    margin-right: 70%;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
 }
 
 #new {
     border: 1px solid black;
     border-radius: 5px;
     padding: .5% 1%;
+    background-color: white;
 }
 
 li {
@@ -33,6 +37,8 @@ li {
 
 li >h3 {
     margin-bottom: 0%;
+    background-color: white;
+    border-radius: 5px
 }
 
 .total >h1, h2 {
@@ -42,8 +48,9 @@ li >h3 {
 
 .main {
     text-align: center;
-    background-color: white;
-    border: 2px solid black;
+    background-image: url('https://mms.businesswire.com/media/20190124005671/en/702329/23/3703797_WF_stagecoach_rgb_ylw_F1.jpg');
+    background-size: cover;
+    border: 2px solid #F5C705;
 }
 
 .main >h2 {
@@ -70,8 +77,23 @@ a:hover {
 .logout:hover {
     cursor: pointer;
     text-decoration: underline;
+    font-weight: bold;
 }
 
 h2 {
     margin-top: 3%
+}
+
+#submit {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#edit {
+    border: 1px solid lightgrey;
+    padding: .1px 5px 2px 4px;
+}
+
+#edit:hover {
+    text-decoration: none;
 }
