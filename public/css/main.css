@@ -1,5 +1,6 @@
 html {
-    background-color: #D91A1F
+    background-color: white;
+    /* background-image: url('https://wfstories-wpengine.netdna-ssl.com/wp-content/uploads/ProgressReport-carousel-800x450-658x370-c-center.jpg') */
 }
 
 nav {
@@ -38,18 +39,20 @@ li {
 li >h3 {
     margin-bottom: 0%;
     background-color: white;
-    border-radius: 5px
+    border-radius: 5px;
+    padding: 3px 5px;
 }
 
 .total >h1, h2 {
     display: inline-block;
     margin: 0;
+    background-color: white;
 }
 
 .main {
     text-align: center;
     background-image: url('https://mms.businesswire.com/media/20190124005671/en/702329/23/3703797_WF_stagecoach_rgb_ylw_F1.jpg');
-    background-size: cover;
+    background-size: contain;
     border: 2px solid #F5C705;
 }
 
@@ -92,6 +95,7 @@ h2 {
 #edit {
     border: 1px solid lightgrey;
     padding: .1px 5px 2px 4px;
+    background-color: white;
 }
 
 #edit:hover {

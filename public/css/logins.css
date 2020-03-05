@@ -1,12 +1,11 @@
 body {
-    /* background-color: #D91A1F; */
     background-image: url('https://wfstories-wpengine.netdna-ssl.com/wp-content/uploads/Advisory_council_Carousel_800x450-658x370-c-center.jpg');
     background-size: cover;
 }
 .main {
     text-align: center;
     display: block;
-    border: 2px solid #F5C705;
+    border: 5px solid #D91A1F;
     width: 40%;
     margin: auto;
     padding: 10px;

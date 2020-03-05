@@ -10,8 +10,8 @@
         <%- include ('../partials/nav.ejs') %>
         <div class="main">
         <h1>New Transaction</h1>
-        <form action="/transactions" method="POST">
         <h4>
+        <form action="/transactions" method="POST">
         Title: <input type="text" name="title" />
         <br/>
         Description: <input type="text" name="description" />
@@ -22,9 +22,9 @@
         <br/>
         Tags: <input type="text" name="tags" placeholder="ex) 'food,shopping,etc.'"/>
         <br/>
-    </h4>
         <input type="submit" name="" value="Create Transaction" id="submit"/>
         </form>
+            </h4>
     </div>
     </body>
     <style>
